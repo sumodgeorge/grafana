@@ -32,7 +32,7 @@ type AlertmanagerApiService interface {
 	RouteGetSilences(*models.ReqContext) response.Response
 	RoutePostAMAlerts(*models.ReqContext, apimodels.PostableAlerts) response.Response
 	RoutePostAlertingConfig(*models.ReqContext, apimodels.PostableUserConfig) response.Response
-	RoutePostReceiversTest(*models.ReqContext, apimodels.TestReceiversConfig) response.Response
+	RoutePostTestReceivers(*models.ReqContext, apimodels.TestReceiversConfig) response.Response
 }
 
 func (api *API) RegisterAlertmanagerApiEndpoints(srv AlertmanagerApiService, m *metrics.Metrics) {
@@ -145,7 +145,7 @@ func (api *API) RegisterAlertmanagerApiEndpoints(srv AlertmanagerApiService, m *
 			metrics.Instrument(
 				http.MethodPost,
 				"/api/alertmanager/{Recipient}/config/api/v1/receivers/test",
-				srv.RoutePostReceiversTest,
+				srv.RoutePostTestReceivers,
 				m,
 			),
 		)
