@@ -315,10 +315,12 @@ func (am *Alertmanager) TestReceivers(ctx context.Context, c apimodels.TestRecei
 	testAlert := &types.Alert{
 		Alert: model.Alert{
 			Labels: model.LabelSet{
-				model.LabelName("instance"): "foo",
+				model.LabelName("instance"): "test",
 			},
-			Annotations: model.LabelSet{},
-			StartsAt:    now,
+			Annotations: model.LabelSet{
+				model.LabelName("summary"): "This is a contact point test",
+			},
+			StartsAt: now,
 		},
 		UpdatedAt: now,
 	}
