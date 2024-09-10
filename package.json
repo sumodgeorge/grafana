@@ -284,7 +284,7 @@
     "react-popper": "2.2.4",
     "react-redux": "7.2.0",
     "react-reverse-portal": "^2.0.1",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.0.0",
     "react-select": "4.3.0",
     "react-split-pane": "0.1.89",
     "react-transition-group": "4.4.1",
